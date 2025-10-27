@@ -22,7 +22,7 @@ public class DataHolder {
         books.add(new Book("To Kill a Mockingbird", "Classic", 4.8));
         books.add(new Book("1984", "Dystopian", 4.7));
         books.add(new Book("The Great Gatsby", "Classic", 4.4));
-        books.add(new Book("Harry Potter and the Sorcerer’s Stone", "Fantasy", 4.9));
+        books.add(new Book("Harry Potter and the Sorcerer's Stone", "Fantasy", 4.9));
         books.add(new Book("The Lord of the Rings", "Fantasy", 4.9));
         books.add(new Book("Pride and Prejudice", "Romance", 4.6));
         books.add(new Book("The Catcher in the Rye", "Classic", 4.0));
