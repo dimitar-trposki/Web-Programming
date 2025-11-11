@@ -60,15 +60,18 @@
         <h2>Choose a book:</h2>
 
         <div th:each="book : ${books}" class="book-option">
-            <input type="radio" name="bookTitle" th:value="${book.title}" required>
+            <input type="radio" name="bookId" th:value="${book.id}" required>
             <span th:text="'Title: ' + ${book.title} + ', Genre: ' + ${book.genre} + ', Rating: '
-            + ${book.averageRating} + ', Author: ' + ${book.getAuthor().getName()} + ' '+ ${book.getAuthor().getSurname()}"></span>
+      + ${book.averageRating} + ', Author: ' + ${book.author.name} + ' ' + ${book.author.surname}"></span>
 
             <div class="actions">
                 <a th:href="@{'/books/edit-form/' + ${book.id}}" class="btn">Edit</a>
-                <form th:action="@{'/books/delete/' + ${book.id}}" method="post" style="display:inline;">
-                    <button type="submit" class="delete-btn">Delete</button>
-                </form>
+                <button type="submit"
+                        th:formaction="@{'/books/delete/' + ${book.id}}"
+                        formmethod="post"
+                        class="delete-btn">
+                    Delete
+                </button>
             </div>
         </div>
 
@@ -77,10 +80,8 @@
         <input type="text" name="readerName" required><br/>
         <label>Your Address:</label>
         <input type="text" name="readerAddress" required><br/>
-
         <h2>Choose number of copies:</h2>
         <input type="number" name="numCopies" min="1" max="10" required><br/><br/>
-
         <input type="submit" value="Reserve Book">
     </form>
 </main>
